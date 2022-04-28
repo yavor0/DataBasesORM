@@ -5,8 +5,8 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import relationship
 from sqlalchemy.orm import backref
 
-
-engine = create_engine('mysql://root:123456y@127.0.0.1/test', echo=True)
+# mysql://root:123456y@127.0.0.1/test
+engine = create_engine('sqlite://', echo=True)
 Base = declarative_base()
 
 class Student(Base):

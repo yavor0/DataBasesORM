@@ -1,11 +1,12 @@
+from xmlrpc.client import DateTime
 from sqlalchemy import Table, Column, String, Integer, ForeignKey
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
-
-engine = create_engine('mysql://root:123456y@127.0.0.1/test', echo=True)
+# mysql://root:123456y@127.0.0.1/test
+engine = create_engine('sqlite://', echo=True)
 Base = declarative_base()
 
 # association_table = Table('bookauthors', Base.metadata,
@@ -23,6 +24,7 @@ class Book(Base):
     __tablename__ = 'books'
     isbn = Column(String(11), primary_key=True)
     title = Column(String(50), nullable=False)
+
 
 class BookAuthor(Base):
     __tablename__ = 'booksauthors'

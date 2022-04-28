@@ -4,8 +4,8 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
-
-engine = create_engine('mysql://root:123456y@127.0.0.1/test', echo=True)
+# mysql://root:123456y@127.0.0.1/test
+engine = create_engine('sqlite://', echo=True)
 Base = declarative_base()
 
 
